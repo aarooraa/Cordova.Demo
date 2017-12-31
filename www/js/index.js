@@ -1,3 +1,14 @@
+var admobid = {}
+if (/(android)/i.test(navigator.userAgent)) {  // for android & amazon-fireos
+  admobid = {
+    banner: 'ca-app-pub-1144612008712915/7593821740'
+  }
+} else if (/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {  // for ios
+  admobid = {
+    banner: 'ca-app-pub-3940256099942544/2934735716'
+  }
+}
+
 phonon.options({
     navigator: {
         defaultPage: 'home',
@@ -56,5 +67,21 @@ app.on({ page: 'devicemotion', content: 'devicemotion.html' }, function (activit
 
 document.addEventListener('deviceready', function () {
     app.start()
+
+    admob.banner.config({
+        id: admobid.banner,
+        isTesting: true,
+        autoShow: true,
+    });
+
+    admob.banner.prepare();
+
+    admob.interstitial.config({
+        id: admobid.interstitial,
+        isTesting: true,
+        autoShow: false,
+    });
+
+    admob.interstitial.prepare();
 });
 

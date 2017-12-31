@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="1" id="com.aarooraa.cordovademo" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>CordovaDemo</name>
+<widget android-versionCode="2" id="com.aarooraa.cordovademo" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Cordova.Demo</name>
     <description>
         A simple demo app to showcase all the available plugins and features of Apache Cordova framework.
     </description>
@@ -29,8 +29,11 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <preference name="windows-target-version" value="10.0" />
     <plugin name="cordova-plugin-battery-status" spec="^1.2.5" />
     <plugin name="cordova-plugin-device" spec="^1.1.7" />
     <plugin name="cordova-plugin-device-motion" spec="^1.2.5" />
-    <engine name="android" spec="^7.0.0" />
+    <plugin name="cordova-plugin-admob-free" spec="^0.13.0" />
+    <engine name="android" spec="^6.3.0" />
+    <engine name="windows" spec="^5.0.0" />
 </widget>
